@@ -24,7 +24,7 @@ class ExceedsMaxUploadSize extends UploadFailed{
     switch ($code):
       case UPLOAD_ERR_INI_SIZE:
         $max= ini_get("upload_max_filesize");
-        parent::__construct("アップロードファイルのサイズは{$max}までです");
+        parent::__construct("アップロードファイルのサイズは{$max}バイトまでです");
         break;
       case UPLOAD_ERR_FORM_SIZE:
         parent::__construct("アップロードファイルのサイズが大きすぎます");
@@ -35,27 +35,36 @@ class ExceedsMaxUploadSize extends UploadFailed{
 }
 
 class UploadedFile{
+/*
   private $original_filename;
   private $content_type;
   private $temppath;
   private $error;
+*/
+  private $hash;
 
   function __construct($hash){
+/*
     $this->original_filename= $hash["name"];
     $this->content_type= $hash["type"];
     $this->temppath= $hash["tmp_name"];
     $this->error= $hash["error"];
+*/
+    $this->hash= $hash;
   }
 
-  function filepath(){
-    return $this->temppath;
+  function tmp_name(){
+    return $this->hash["tmp_name"];
+  }
+  function name(){
+    return $this->hash["name"];
+  }
+  function hash(){
+    return $this->hash;
   }
 
   function check_errors(){
-    if(!is_uploaded_file($this->temppath))
-      throw new InvalidUpload;
-    $error= $this->error;
-    switch ($error):
+    switch ($this->hash["error"]):
       case UPLOAD_ERR_OK:
         return;
         break;
@@ -84,5 +93,7 @@ class UploadedFile{
         throw new UploadFailed;
         break;
     endswitch;
+    if(!is_uploaded_file($this->hash["tmp_name"]))
+      throw new InvalidUpload;
   }
 }

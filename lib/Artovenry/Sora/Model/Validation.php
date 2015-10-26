@@ -19,7 +19,7 @@ trait Validation{
     return $this->error;
   }
 
-  function set_error($name, $messsage){
+  function set_error($name, $message){
     $this->error->append($name, $message);
   }
 
