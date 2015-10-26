@@ -52,7 +52,7 @@ class UploadedFile{
   }
 
   function check_errors(){
-    if(!is_uploaded_file($this->["temppath"]))
+    if(!is_uploaded_file($this->temppath))
       throw new InvalidUpload;
     $error= $this->error;
     switch ($error):

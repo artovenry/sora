@@ -28,9 +28,9 @@ trait Validation{
       return $this->before_validation();
   }
   private function do_validation($raise= false){
+    $this->error= new Error($this);
     if($this->do_before_validation() === false)
       return;
-    $this->error= new Error($this);
     foreach(get_class_methods(get_class($this)) as $method){
       if(preg_match("/\Avalidates_(.+)/", $method, $matches))
         $this->$method($this->$matches[1]);
