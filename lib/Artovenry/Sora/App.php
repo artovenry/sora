@@ -19,6 +19,7 @@ class App{
     }catch(APPError $e){
       if(defined("ART_ENV") && ART_ENV === "production")
         exit;
+      throw $e;
     }
   }
   private function __construct(){
