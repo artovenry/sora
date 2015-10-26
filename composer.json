@@ -1,0 +1,19 @@
+{
+    "name": "showtarow/model",
+    "repositories":[
+      {"type": "vcs", "url": "https://github.com/artovenry/haml"}
+    ],
+    "require-dev": {
+        "j4mie/idiorm": "~1.5",
+        "artovenry/haml": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "artovenry",
+            "email": "artovenry@gmail.com"
+        }
+    ],
+     "autoload":{
+       "psr-4":{"": "lib/"}
+    }
+}
