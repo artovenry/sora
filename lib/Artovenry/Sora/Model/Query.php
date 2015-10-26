@@ -2,7 +2,7 @@
 namespace Artovenry\Sora\Model;
 trait Query{
   function take($limit=null){
-    if(empty($limit) or $limit == 1)
+    if(empty($limit) || $limit == 1)
       return $this->find_one();
     return $this->limit($limit)->find_many();
   }
