@@ -16,11 +16,13 @@ abstract class Base extends Model{
     return !isset($this->id);
   }
 
+  //FIXME Should performance
   static function exists($id){
+    if(empty($id)) return false;
     try{
-      return self::find_one($id);
+      return static::find_one($id);
     }catch(RecordNotFound $e){
-      return $false;
+      return false;
     }
   }
 }

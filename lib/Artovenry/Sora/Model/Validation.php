@@ -2,6 +2,7 @@
 namespace Artovenry\Sora\Model;
 
 trait Validation{
+  use ValidatorHelper;
   protected $error;
 
   function validate($raise= false){
