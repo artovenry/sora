@@ -7,6 +7,7 @@ require "constants.php";
 class APPError extends \Exception{}
 class ControllerNotFound extends APPError{}
 class TokenNotSent extends APPError{}
+class InvalidFileRequest extends APPError{}
 
 class App{
   static $path= "";
@@ -45,10 +46,23 @@ class App{
     if($method == "POST")
       $params= array_merge(array_merge($params, $_POST));
     if(!empty($_FILES))
-      $params= array_merge($params, UploadedFile::parse());
+      $params= array_merge($params, $this->parse_file_params());
     if($method == "POST" && !isset($params[CSRF_TOKEN]))
       throw new TokenNotSent;
     return $params;
+  }
+
+  private function parse_file_params(){
+    $files= $_FILES;
+    $rs=[];
+    foreach($files as $key=>$item){
+      //We does not support array-type keys in $_FILES
+      if(is_array($item["name"]))throw new InvalidFileRequest;
+      if(empty($item["name"]))continue;
+      $rs[$key]= new UploadedFile($item);
+    }
+    return $rs;
+
   }
 
   function load_globals(){

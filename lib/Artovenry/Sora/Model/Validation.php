@@ -19,6 +19,10 @@ trait Validation{
     return $this->error;
   }
 
+  function set_error($name, $messsage){
+    $this->error->append($name, $message);
+  }
+
   private function do_before_validation(){
     if(method_exists($this, "before_validation"))
       return $this->before_validation();

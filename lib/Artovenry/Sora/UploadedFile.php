@@ -12,7 +12,6 @@ NG:   name="hoge[daba]"
 
 
 class UploadError extends \Exception{}
-class InvalidFileRequest extends UploadError{}
 class InvalidUpload extends UploadError{
   var $message= "不正なアップロードが行われました、お手数ですがサイト管理者へご連絡ください";
 }
@@ -41,30 +40,20 @@ class UploadedFile{
   private $temppath;
   private $error;
 
-  static function parse(){
-    $files= $_FILES;
-    $rs=[];
-    foreach($files as $key=>$item){
-      if(is_array($item["name"]))throw new InvalidFileRequest;
-      if(empty($item["name"]))continue;
-      $rs[$key]= new self($item);
-    }
-    return $rs;
-  }
-
   function __construct($hash){
-    //$this->check_errors($hash["error"]);
-    //if(!is_uploaded_file($hash["tmp_name"]))
-    //  throw new InvalidUpload;
     $this->original_filename= $hash["name"];
     $this->content_type= $hash["type"];
     $this->temppath= $hash["tmp_name"];
     $this->error= $hash["error"];
   }
 
-  function is_uploaded_file(){}
+  function filepath(){
+    return $this->temppath;
+  }
 
   function check_errors(){
+    if(!is_uploaded_file($this->["temppath"]))
+      throw new InvalidUpload;
     $error= $this->error;
     switch ($error):
       case UPLOAD_ERR_OK:
