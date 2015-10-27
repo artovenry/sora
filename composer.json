@@ -1,5 +1,5 @@
 {
-    "name": "showtarow/model",
+    "name": "artovenry/sora",
     "repositories":[
       {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
