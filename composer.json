@@ -1,9 +1,6 @@
 {
     "name": "artovenry/sora",
     "description": "Simple application framework for artovenry.",
-    "repositories":[
-        ""
-    ],
     "require": {
         "artovenry/haml": "dev-master",
         "j4mie/idiorm": "1.5.1"
