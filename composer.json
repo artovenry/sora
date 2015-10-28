@@ -6,11 +6,11 @@
         {"type": "git", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
-        "artovenry/haml": "*",
+        "artovenry/haml": "1.0",
         "j4mie/idiorm": "1.5.1"
     },
     "require-dev": {
-        "artovenry/haml": "*",
+        "artovenry/haml": "1.0",
         "j4mie/idiorm": "1.5.1"
     },
     "authors": [
