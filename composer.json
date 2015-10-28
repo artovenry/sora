@@ -3,17 +3,7 @@
     "description": "Simple application framework for artovenry.",
 
     "repositories":[
-      {"type": "package",
-        "package":{
-          "name": "j4mie/idiorm",
-          "version": "1.5.1",
-          "source":{
-              "url": "https://github.com/j4mie/idiorm.git",
-              "type": "git",
-              "reference": "1.5.1"
-          }
-        }
-      }
+        {"type": "git", "url": "https://github.com/j4mie/idiorm"}
     ],
     "require": {
         "j4mie/idiorm": "1.5.1"
