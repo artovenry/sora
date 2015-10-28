@@ -3,6 +3,7 @@
     "description": "Simple application framework for artovenry.",
 
     "repositories":[
+        {"packagist": false},
         {"type":"package",
           "package":{
                 "name": "artovenry/haml",
