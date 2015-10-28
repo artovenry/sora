@@ -6,10 +6,10 @@
       {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
-        "j4mie/idiorm": "~1.5"
+        "j4mie/idiorm": "*"
     },
     "require-dev": {
-        "j4mie/idiorm": "~1.5"
+        "j4mie/idiorm": "*"
     },
     "authors": [
         {
