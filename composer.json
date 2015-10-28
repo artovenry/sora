@@ -7,6 +7,10 @@
         "j4mie/idiorm": "~1.5",
         "artovenry/haml": "dev-master"
     },
+    "require-dev": {
+        "j4mie/idiorm": "~1.5",
+        "artovenry/haml": "dev-master"
+    },
     "authors": [
         {
             "name": "artovenry",
