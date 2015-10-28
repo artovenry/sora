@@ -3,7 +3,8 @@
     "description": "Simple application framework for artovenry.",
 
     "repositories":[
-        {"type": "git", "url": "https://github.com/artovenry/haml"}
+        {"packagist": false},
+        {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
         "artovenry/haml": "1.0"
