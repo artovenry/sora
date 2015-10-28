@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2356960d4477a8c6bfe25f4e9dcd3a88",
+    "hash": "7acf5e25adff85693f72e50929cf0040",
     "packages": [
         {
             "name": "artovenry/haml",
