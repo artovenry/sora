@@ -6,12 +6,10 @@
       {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
-        "j4mie/idiorm": "~1.5",
-        "artovenry/haml": "1.0"
+        "j4mie/idiorm": "~1.5"
     },
     "require-dev": {
-        "j4mie/idiorm": "~1.5",
-        "artovenry/haml": "1.0"
+        "j4mie/idiorm": "~1.5"
     },
     "authors": [
         {
@@ -21,6 +19,5 @@
     ],
      "autoload":{
        "psr-4":{"": "lib/"}
-    },
-    "minimum-stability": "stable"
+    }
 }
