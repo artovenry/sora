@@ -3,7 +3,7 @@
     "repositories":[
       {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
-    "require-dev": {
+    "require": {
         "j4mie/idiorm": "~1.5",
         "artovenry/haml": "dev-master"
     },
