@@ -3,12 +3,13 @@
     "description": "Simple application framework for artovenry.",
 
     "repositories":[
+        {"type": "git", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
-        "j4mie/idiorm": "1.5.1"
+        "artovenry/haml": "1.0"
     },
     "require-dev": {
-        "j4mie/idiorm": "1.5.1"
+        "artovenry/haml": "1.0"
     },
     "authors": [
         {
