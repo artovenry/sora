@@ -1,5 +1,7 @@
 {
     "name": "artovenry/sora",
+    "description": "Simple application framework for artovenry.",
+
     "repositories":[
       {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
