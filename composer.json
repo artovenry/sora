@@ -6,10 +6,10 @@
         {"type": "vcs", "url": "https://github.com/artovenry/haml"}
     ],
     "require": {
-        "artovenry/haml": "1.0.0"
+        "artovenry/haml": "v1.0.0"
     },
     "require-dev": {
-        "artovenry/haml": "1.0.0"
+        "artovenry/haml": "v1.0.0"
     },
     "authors": [
         {
