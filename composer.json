@@ -7,11 +7,11 @@
     ],
     "require": {
         "j4mie/idiorm": "~1.5",
-        "artovenry/haml": "dev-master"
+        "artovenry/haml": "1.0"
     },
     "require-dev": {
         "j4mie/idiorm": "~1.5",
-        "artovenry/haml": "dev-master"
+        "artovenry/haml": "1.0"
     },
     "authors": [
         {
