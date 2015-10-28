@@ -2,11 +2,11 @@
     "name": "artovenry/sora",
     "description": "Simple application framework for artovenry.",
     "require": {
-        "artovenry/haml": "dev-master",
+        "artovenry/haml": "1.0.0",
         "j4mie/idiorm": "1.5.1"
     },
     "require-dev": {
-        "artovenry/haml": "dev-master",
+        "artovenry/haml": "1.0.0",
         "j4mie/idiorm": "1.5.1"
     },
     "authors": [
