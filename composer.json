@@ -6,20 +6,20 @@
       {"type": "package",
         "package":{
           "name": "j4mie/idiorm",
-          "version": "dev-master",
+          "version": "1.5.1",
           "source":{
               "url": "https://github.com/j4mie/idiorm.git",
               "type": "git",
-              "reference": "master"
+              "reference": "1.5.1"
           }
         }
       }
     ],
     "require": {
-        "j4mie/idiorm": "dev-master"
+        "j4mie/idiorm": "1.5.1"
     },
     "require-dev": {
-        "j4mie/idiorm": "dev-master"
+        "j4mie/idiorm": "1.5.1"
     },
     "authors": [
         {
