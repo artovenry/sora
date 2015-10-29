@@ -5,6 +5,8 @@ class RouteNotFound extends APPError{}
 
 class Route{
   private static $route;
+  private static $request_uri;
+
   static function run(){
     require_once join("/", [App::$path, CONFIG]) . "/route.php";
   }
@@ -21,8 +23,16 @@ class Route{
     }
   }
 
+  static function ask(){
+    preg_match("/\A(.+)(\/)?(\?(.*))\z/",self::$request_uri, $matches);
+    $path= $matches[1];
+    parse_str($matches[4], $query);
+    return ["path"=>$path, "query"=>$query];
+  }
 
   static function resolve($request_uri, $method){
+    self::$request_uri =$request_uri;
+
     foreach(self::$route as $item){
       $path= str_replace("/", '\/', $item["path"]);
       if($item["method"] != $method)continue;
