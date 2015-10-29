@@ -24,9 +24,8 @@ class Route{
   }
 
   static function ask(){
-    preg_match("/\A(.+)(\/)?(\?(.*))\z/",self::$request_uri, $matches);
-    $path= $matches[1];
-    parse_str($matches[4], $query);
+    list($path, $query)= explode("?", ltrim(self::$request_uri, "/"), 1);
+    parse_str($query, $query);
     return ["path"=>$path, "query"=>$query];
   }
 
