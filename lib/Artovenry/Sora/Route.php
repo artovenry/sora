@@ -24,7 +24,7 @@ class Route{
   }
 
   static function ask(){
-    $path= explode("?", ltrim(self::$request_uri, "/"), 1)[0];
+    $path= rtrim(ltrim(self::$request_uri, "/"), "?");
     return ["path"=>$path, "query"=>$_GET];
   }
 
