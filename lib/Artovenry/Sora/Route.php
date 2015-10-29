@@ -24,9 +24,8 @@ class Route{
   }
 
   static function ask(){
-    list($path, $query)= explode("?", ltrim(self::$request_uri, "/"), 1);
-    parse_str($query, $query);
-    return ["path"=>$path, "query"=>$query];
+    $path= explode("?", ltrim(self::$request_uri, "/"), 1)[0];
+    return ["path"=>$path, "query"=>$_GET];
   }
 
   static function resolve($request_uri, $method){
