@@ -9,6 +9,9 @@ trait Persistence{
     }catch(RecordNotSaved $e){
       return $record;
     }
+    $class= get_called_class();
+    if(method_exists($class, "after_create"))
+      static::after_create($persisted);
     return $persisted;
   }
 
@@ -20,6 +23,8 @@ trait Persistence{
       if($raise) throw new RecordNotDestroyed;
       return false;
     }
+    if(method_exists($this, "after_destroy"))
+      $this->after_destroy();
     return true;
   }
 
