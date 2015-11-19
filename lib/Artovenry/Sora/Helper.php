@@ -1,6 +1,6 @@
 <?
 namespace Artovenry\Sora;
-abstruct class Helper{
+abstract class Helper{
 	static function helpers(){
     $helper_klass= new ReflectionClass(get_called_class());
     $rs= [];
