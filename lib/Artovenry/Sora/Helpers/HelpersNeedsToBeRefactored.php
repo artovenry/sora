@@ -8,11 +8,11 @@ trait HelpersNeedsToBeRefactored{
 
   function csrf_token_field(){
   $el= '<input type="hidden" name="%s" value="%s">';
-  return sprintf($el,Artovenry\Sora\CSRF_TOKEN, $this->csrf_token());
+  return sprintf($el,\Artovenry\Sora\CSRF_TOKEN, $this->csrf_token());
   }
 
   function csrf_token($json=false){
-  $token= wp_create_nonce(Artovenry\Sora\CSRF_TOKEN);
+  $token= wp_create_nonce(\Artovenry\Sora\CSRF_TOKEN);
   return $json? json_encode($token): $token;
   }
 
