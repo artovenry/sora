@@ -1,6 +1,7 @@
 <?
 namespace Artovenry\Sora;
 abstract class Helper{
+    use Helpers\HelpersNeedsToBeRefactored;
 	static function helpers(){
     $helper_klass= new \ReflectionClass(get_called_class());
     $rs= [];
