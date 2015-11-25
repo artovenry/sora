@@ -63,37 +63,42 @@ class UploadedFile{
     return $this->hash;
   }
 
-  function check_errors(){
-    switch ($this->hash["error"]):
-      case UPLOAD_ERR_OK:
-        return;
-        break;
-      case UPLOAD_ERR_INI_SIZE:
-        throw new ExceedsMaxUploadSize(UPLOAD_ERR_INI_SIZE);
-        break;
-      case UPLOAD_ERR_FORM_SIZE:
-        throw new ExceedsMaxUploadSize(UPLOAD_ERR_FORM_SIZE);
-        break;
-      case UPLOAD_ERR_PARTIAL:
-        throw new UploadFailed;
-        break;
-      case UPLOAD_ERR_NO_FILE:
-        throw new UploadFailed;
-        break;
-      case UPLOAD_ERR_NO_TMP_DIR:
-        throw new UploadFailed;
-        break;
-      case UPLOAD_ERR_CANT_WRITE:
-        throw new UploadFailed;
-        break;
-      case UPLOAD_ERR_EXTENSION:
-        throw new UploadFailed;
-        break;
-      default:
-        throw new UploadFailed;
-        break;
-    endswitch;
-    if(!is_uploaded_file($this->hash["tmp_name"]))
-      throw new InvalidUpload;
+  function check_errors($raise=false){
+    try{
+      switch ($this->hash["error"]):
+        case UPLOAD_ERR_OK:
+          return true;
+          break;
+        case UPLOAD_ERR_INI_SIZE:
+          throw new ExceedsMaxUploadSize(UPLOAD_ERR_INI_SIZE);
+          break;
+        case UPLOAD_ERR_FORM_SIZE:
+          throw new ExceedsMaxUploadSize(UPLOAD_ERR_FORM_SIZE);
+          break;
+        case UPLOAD_ERR_PARTIAL:
+          throw new UploadFailed;
+          break;
+        case UPLOAD_ERR_NO_FILE:
+          throw new UploadFailed;
+          break;
+        case UPLOAD_ERR_NO_TMP_DIR:
+          throw new UploadFailed;
+          break;
+        case UPLOAD_ERR_CANT_WRITE:
+          throw new UploadFailed;
+          break;
+        case UPLOAD_ERR_EXTENSION:
+          throw new UploadFailed;
+          break;
+        default:
+          throw new UploadFailed;
+          break;
+      endswitch;
+      if(!is_uploaded_file($this->hash["tmp_name"]))
+        throw new InvalidUpload;
+    }catch(UploadError $e){
+      if($raise)throw $e;
+      else return false;
+    }
   }
 }
