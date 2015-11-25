@@ -3,7 +3,7 @@ namespace Artovenry\Sora\Model;
 
 trait ValidatorHelper{
   protected function is_duplicated($attr_name, $val, $options=[]){
-  	$scopes= $options["scopes"]? $options["scopes"]: [];
+  	$scopes= empty($options["scopes"])? $options["scopes"]: [];
   	$record= $this;
     $selected= array_reduce(
     	$scopes,
