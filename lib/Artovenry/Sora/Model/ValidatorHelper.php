@@ -13,7 +13,6 @@ trait ValidatorHelper{
       self::factory(get_class($this))
     )->where($attr_name, $val)->take();
 
-    exit; 
     if($selected == false)return false;
     if($this->is_new())return true;
     if($selected->id == $this->id)return false;
