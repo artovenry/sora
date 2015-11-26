@@ -23,11 +23,11 @@ trait Validation{
     $this->error->append($name, $message);
   }
 
-  private function do_before_validation(){
+  protected function do_before_validation(){
     if(method_exists($this, "before_validation"))
       return $this->before_validation();
   }
-  private function do_validation($raise= false){
+  protected function do_validation($raise= false){
     $this->error= new Error($this);
     if($this->do_before_validation() === false)
       return;
