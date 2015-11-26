@@ -50,4 +50,12 @@ class Error{
 	function append_base($message){
 		$this->append(self::BASE, $message);
 	}
+
+	function messages(){
+		return $this->data;
+	}
+
+	function messages_for($name){
+		return $this->messages()[$name];
+	}
 }
